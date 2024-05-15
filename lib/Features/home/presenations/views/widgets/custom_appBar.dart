@@ -1,4 +1,6 @@
 import 'package:bookly_application/Features/home/presenations/views/widgets/best_seller_list_view.dart';
+import 'package:bookly_application/Features/info/info_screen.dart';
+import 'package:bookly_application/Features/info/infoview.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
@@ -23,8 +25,16 @@ class CustomAppBar extends StatelessWidget {
           SizedBox(
             height: 75,
             width: 75,
-            child: Image.asset(
-              AssetsData.logo,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => InfoView()),
+                );
+              },
+              child: Image.asset(
+                AssetsData.logo,
+              ),
             ),
           ),
           Spacer(),
@@ -40,7 +50,7 @@ class CustomAppBar extends StatelessWidget {
           ),
           //Spacer(),
           IconButton(
-            onPressed: () async{
+            onPressed: () async {
               SharedPreferences prefs = await SharedPreferences.getInstance();
               prefs.remove("AddedID");
               GoRouter.of(context).push(AppRouter.klogin);
