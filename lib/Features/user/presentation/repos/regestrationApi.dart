@@ -30,15 +30,15 @@ class RegisterApi {
       if (response.statusCode == 200 || response.statusCode == 201) {
         print(response.data);
         GoRouter.of(context).push(AppRouter.kfirstFilmsList);
-        print(response.data["AddedID"]);
+        print(response.data["addedID"]);
 
         final SharedPreferences prefs = await SharedPreferences.getInstance();
-        await prefs.setString("AddedID", response.data["AddedID"]);
+        await prefs.setString("AddedID", response.data["addedID"]);
         String? AddedId = prefs.getString("AddedID");
         id=AddedId;
 
         print("Id is : $AddedId");
-        setUserId(response.data["AddedID"]);
+        setUserId(response.data["addedID"]);
         print("after");
       }
     } catch (e) {

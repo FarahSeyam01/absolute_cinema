@@ -68,17 +68,20 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void navigateToHome() {
-    Future.delayed(
+    
+     Future.delayed(
       const Duration(seconds: 2),
       () async{
+        GoRouter.of(context).push(AppRouter.klogin);
+        /* GoRouter.of(context).push(AppRouter.klogin);
         WidgetsFlutterBinding.ensureInitialized();
         SharedPreferences prefs = await SharedPreferences.getInstance();
         var id = prefs.getString("AddedID");
-        print(id);
+        print(id); */
         // Get.to(() => const HomeView(),
         //    transition: Transition.downToUp, duration: kTranstionDuration);
-        id==null?GoRouter.of(context).push(AppRouter.klogin):GoRouter.of(context).push(AppRouter.kHomeView);
+       // id==null?GoRouter.of(context).push(AppRouter.klogin):GoRouter.of(context).push(AppRouter.kHomeView);
       },
-    );
+    ); 
   }
 }
