@@ -55,24 +55,27 @@ class FirstFilmsListBody extends StatelessWidget {
                 height: 8,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      'Give us a taste of your taste \n  Kindly rate the following films',
-                      style: Styles.textStyle18,
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        GoRouter.of(context).push(AppRouter.kHomeView);
-                      },
-                      child: const Text(
-                        'Done',
-                        style: Styles.textStyle18,
+                padding: EdgeInsets.symmetric(horizontal: 25.0),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Give us a taste of your taste \n  Kindly rate the following films',
+                        style: Styles.textStyle14,
                       ),
-                    )
-                  ],
+                      TextButton(
+                        onPressed: () {
+                          GoRouter.of(context).push(AppRouter.kHomeView);
+                        },
+                        child: const Text(
+                          'Done',
+                          style: Styles.textStyle18,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(
