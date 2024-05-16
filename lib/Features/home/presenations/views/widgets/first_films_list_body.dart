@@ -60,7 +60,7 @@ class FirstFilmsListBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text(
-                      'Give us a taste of your taste \n  Kindly rate the following films',
+                      'Give us a hint of your taste',
                       style: Styles.textStyle18,
                     ),
                     TextButton(

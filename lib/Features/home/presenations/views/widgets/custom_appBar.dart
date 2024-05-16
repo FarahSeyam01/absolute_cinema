@@ -1,5 +1,6 @@
 import 'package:bookly_application/Features/home/presenations/views/widgets/best_seller_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,11 +21,16 @@ class CustomAppBar extends StatelessWidget {
       ),
       child: Row(
         children: [
-          SizedBox(
-            height: 75,
-            width: 75,
-            child: Image.asset(
-              AssetsData.logo,
+          GestureDetector(
+            onTap: () {
+              GoRouter.of(context).push(AppRouter.kInfoScreen);
+            },
+            child: SizedBox(
+              height: 75,
+              width: 75,
+              child: Image.asset(
+                AssetsData.logo,
+              ),
             ),
           ),
           Spacer(),

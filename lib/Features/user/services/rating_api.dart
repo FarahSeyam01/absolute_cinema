@@ -28,8 +28,8 @@ class RatingApi {
           builder: (BuildContext context) {
             return AlertDialog(
               backgroundColor: Colors.white, // Set background color to white
-              title: Text('Success',style: TextStyle(color: Color(0xff100B20)),),
-              content: Text('Rating submitted successfully.',style: TextStyle(color: Color(0xff100B20)),),
+              title: Text('Success',style: TextStyle(color: Color(0xff100B20),fontWeight: FontWeight.bold),),
+              content: Text('Rating submitted successfully.',style: TextStyle(color: Color(0xff100B20),fontSize: 15),),
               actions: <Widget>[
                 TextButton(
                   onPressed: () {
@@ -38,7 +38,7 @@ class RatingApi {
                   style: TextButton.styleFrom(
                     foregroundColor: Color(0xff100B20), // Set button text color
                   ),
-                  child: Text('OK'),
+                  child: Text('OK',style: TextStyle(color: Color(0xff100B20),fontWeight: FontWeight.bold,fontSize: 17),),
                 ),
               ],
             );
