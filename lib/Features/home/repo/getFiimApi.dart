@@ -6,16 +6,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 const getFilmApiUrl = "https://backend-in-db-project.onrender.com/MovieID";
 
-Future<Films> getFilmApi() async {
+Future<Targetfilm> getFilmApi() async {
  
   
-  Films targetFilm = Films(movieId: '', title: '', poster: '', genres: [], cast:[] );
+  Targetfilm targetFilm = Targetfilm(movieid: '', title: '', poster: '', genres: [], castPhotos: [] );
   
   String? movieId = getMovieId();
 
   try {
     if (movieId != null) {
-      print('id here: $movieId');
+      print('id hhere: $movieId');
     } else {
       print('id is null');
       //return filmsList; // Return empty list if id is null
@@ -27,15 +27,16 @@ Future<Films> getFilmApi() async {
     if (response.statusCode == 200 || response.statusCode == 201) {
       final filmsData = response.data;
       
-     targetFilm=  Films(
-          movieId: filmsData['movieid'],
+     targetFilm=  Targetfilm(
+          movieid: filmsData['movieid'],
           title: filmsData['title'],
           poster: filmsData['poster'],
           genres: List<String>.from(filmsData['genres']),
-          cast: List<String>.from(filmsData['cast']),
+       castPhotos: List<String>.from(filmsData['cast_photos']),
+          //cast: List<String>.from(filmsData['cast']),
         );
      
-      //print(targetFilm);
+      print(targetFilm);
       //print(targetFilm.title);
       return targetFilm;
     } else {
