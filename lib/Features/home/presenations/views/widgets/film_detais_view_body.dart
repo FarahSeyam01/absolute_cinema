@@ -1,4 +1,5 @@
 import 'package:bookly_application/Features/home/model/filmdetailsmodel.dart';
+import 'package:bookly_application/Features/home/model/targetFilmModel.dart';
 import 'package:bookly_application/Features/home/presenations/views/widgets/Similar_films_section.dart';
 
 import 'package:bookly_application/Features/home/presenations/views/widgets/custom_film_details_appBar.dart';
@@ -32,14 +33,14 @@ class _FilmDetailsViewBodyState extends State<FilmDetailsViewBody> {
     print('body1');
     //print(targetFilm);
   }
-   Future<Films> filmsFuture= getFilmApi();
+   Future<Targetfilm> filmsFuture= getFilmApi();
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<Films>(
+    return FutureBuilder<Targetfilm>(
 
 
          future: filmsFuture,
-      builder: (BuildContext context, AsyncSnapshot<Films> snapshot)
+      builder: (BuildContext context, AsyncSnapshot<Targetfilm> snapshot)
       {if (snapshot.connectionState == ConnectionState.waiting) {
         // until data is fetched, show loader
         return Center(heightFactor:40,child: const CircularProgressIndicator(color: Colors.white,));

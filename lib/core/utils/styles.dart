@@ -12,6 +12,7 @@ abstract class Styles {
   );
   static const textStyle14 = TextStyle(
     fontSize: 14,
+    color: Colors.grey,
     fontWeight: FontWeight.normal,
   );
   static const textStyle16 = TextStyle(
@@ -20,7 +21,7 @@ abstract class Styles {
   );
   static const textStyle30 = TextStyle(
     fontSize: 30,
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.bold,
     fontFamily: kAlegreya,
   );
 }
